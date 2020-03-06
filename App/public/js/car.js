@@ -35,5 +35,3 @@ function carImage(vin) {
         console.log(response.data.data);
     });
     };
-
-carImage(vin);
