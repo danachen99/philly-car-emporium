@@ -35,7 +35,7 @@ module.exports = (app) => {
     //READ 
     // cars/:make ... :model .... :
     //Can we use promise all here to remove repetitiveness? 
-    app.get("/api/cars/:vin", (req, res) => {
+    app.get("/api/vin/:vin", (req, res) => {
         Car.findOne({
             where: {
                 vin: req.params.vin
@@ -45,7 +45,7 @@ module.exports = (app) => {
         });
     });
 
-    app.get("/api/cars/:make", (req, res) => {
+    app.get("/api/make/:make", (req, res) => {
         Car.findAll({
             where: {
                 make: req.params.make
@@ -55,7 +55,7 @@ module.exports = (app) => {
         });
     });
 
-    app.get("/api/cars/:model", (req, res) => {
+    app.get("/api/model/:model", (req, res) => {
         Car.findAll({
             where: {
                 model: req.params.model
@@ -65,7 +65,7 @@ module.exports = (app) => {
         });
     });
 
-    app.get("/api/cars/:year", (req, res) => {
+    app.get("/api/year/:year", (req, res) => {
         Car.findAll({
             where: {
                 year: req.params.year
@@ -75,7 +75,7 @@ module.exports = (app) => {
         });
     });
 
-    app.get("/api/cars/:manufacturer", (req, res) => {
+    app.get("/api/manufacturer/:manufacturer", (req, res) => {
         Car.findAll({
             where: {
                 manufacturer: req.params.manufacturer
