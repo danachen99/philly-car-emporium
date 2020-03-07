@@ -24,7 +24,7 @@ module.exports = (app) => {
 
     //DELETE ... destroy by ID 
     app.delete("/api/cars/:id", (req, res) => {
-        Car.destroy({
+        db.Car.destroy({
             where: {
                 id: req.params.id
             }
@@ -36,7 +36,7 @@ module.exports = (app) => {
     // cars/:make ... :model .... :
     //Can we use promise all here to remove repetitiveness? 
     app.get("/api/vin/:vin", (req, res) => {
-        Car.findOne({
+        db.Car.findOne({
             where: {
                 vin: req.params.vin
             }
@@ -46,7 +46,7 @@ module.exports = (app) => {
     });
 
     app.get("/api/make/:make", (req, res) => {
-        Car.findAll({
+        db.Car.findAll({
             where: {
                 make: req.params.make
             }
@@ -56,7 +56,7 @@ module.exports = (app) => {
     });
 
     app.get("/api/model/:model", (req, res) => {
-        Car.findAll({
+        db.Car.findAll({
             where: {
                 model: req.params.model
             }
@@ -66,7 +66,7 @@ module.exports = (app) => {
     });
 
     app.get("/api/year/:year", (req, res) => {
-        Car.findAll({
+        db.Car.findAll({
             where: {
                 year: req.params.year
             }
@@ -76,7 +76,7 @@ module.exports = (app) => {
     });
 
     app.get("/api/manufacturer/:manufacturer", (req, res) => {
-        Car.findAll({
+        db.Car.findAll({
             where: {
                 manufacturer: req.params.manufacturer
             }
