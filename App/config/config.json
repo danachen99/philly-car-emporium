@@ -1,10 +1,10 @@
 {
 
     "development": {
-        "username": "root",
-        "password": "yourRootPassword",
-        "database": "cars_db",
-        "host": "127.0.0.1",
+        "username": "wrgkc0pqs16bqrye",
+        "password": "y2vl0xpou4cqu982",
+        "database": "p2ubhoalixi25qka",
+        "host": "lyl3nln24eqcxxot.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
     },
     "test": {
@@ -15,10 +15,10 @@
         "dialect": "mysql"
     },
     "production": {
-        "username": "root",
-        "password": "yourRootPassword",
-        "database": "cars_db",
-        "host": "127.0.0.1",
+        "username": "wrgkc0pqs16bqrye",
+        "password": "y2vl0xpou4cqu982",
+        "database": "p2ubhoalixi25qka",
+        "host": "lyl3nln24eqcxxot.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
     }
 }

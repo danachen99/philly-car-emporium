@@ -1,11 +1,9 @@
 const axios = require("axios");
-//Jordan's credentials 
-const partnerToken = "90a427e62ab8493bb0785d22793a89e8";
-const apiKey = "Basic Mjc2OWY4MmYtMGRmMi00ODE2LWI5Y2UtMjBlNmJjZWFiMjM3";
+const config = require("../../config/config.js")
+const apiKey = config.apiKey;
+const partToken = config.partnerToken;
 
-//Dana's credentials
-// const partnerToken = "8d4e04b227c2408f90b6a9f43cbcbda1";
-// const apiKey = "Basic YmUyY2RhODUtMzUwMS00YTZmLThhMWEtNWNmNmEzYTNlNjUz";
+
 const vin = "5XXGN4A70CG022862";
 const queryUrl = `http://api.carmd.com/v3.0/decode?vin=` + vin;
 const queryUrl2 = 'http://api.carmd.com/v3.0/image?vin=' + vin;
@@ -18,7 +16,7 @@ module.exports = function carInfo(vin) {
         headers: {
             "content-type": "application/json",
             "authorization": apiKey,
-            "partner-token": partnerToken
+            "partner-token": partToken
         }
     }).then(function(response) {
         console.log(response.data.data);
@@ -34,7 +32,7 @@ function carImage(vin) {
         headers: {
             "content-type": "application/json",
             "authorization": apiKey,
-            "partner-token": partnerToken
+            "partner-token": partToken
         }
     }).then(function(response) {
         console.log(response.data.data);
