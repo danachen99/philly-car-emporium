@@ -25,6 +25,16 @@ form.login {
 body {
     font-family: 'Montserrat', sans-serif;
 }
+button.car-info {
+  background-color: gray;
+  color: #fff;
+  padding: .8em;
+  margin-right: .5em;
+}
+ button.add-to-favs {
+  background-color: #7cde7c;
+  padding: .8em;
+}
 /* ========== Navigation Menu ==================== */
 .topnav {
     overflow: hidden;
@@ -104,6 +114,12 @@ body {
       padding: 2em;
       text-align: center;
   }
+  @media (min-width: 640px) and (max-width: 1003px) {
+    button.car-info, button.add-to-favs {
+        width: 100%;
+        margin-bottom: .5em;
+    }
+}
 /* ========== Mobile Responsive Rules ==================== */
 @media (max-width: 999px) {
     h2 {
