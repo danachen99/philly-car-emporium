@@ -26,8 +26,6 @@ module.exports = function carInfo(vin) {
     });
 };
 
-
-
 function carImage(vin) {
     axios({
         method: 'get',
