@@ -35,6 +35,16 @@ module.exports = (app) => {
     //READ 
     // cars/:make ... :model .... :
     //Can we use promise all here to remove repetitiveness? 
+    app.get("/api/cars/all", (req, res) => {
+        db.Car.findAll({}
+        ).then(results => {
+            res.json(results)
+            results.forEach(car => {
+                console.log(car)
+            });
+        });
+    });
+
     app.get("/api/vin/:vin", (req, res) => {
         db.Car.findOne({
             where: {
@@ -44,6 +54,7 @@ module.exports = (app) => {
             res.json(results)
         });
     });
+
 
     app.get("/api/make/:make", (req, res) => {
         db.Car.findAll({
