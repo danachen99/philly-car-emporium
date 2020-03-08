@@ -102,6 +102,26 @@ a.logo:hover {
 
 /* ========== Universal Rules ==================== */
 
+.mar20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mar30 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.mar40 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mar50 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 a.logo {
     font-weight: bold;
     text-transform: uppercase;
@@ -145,18 +165,36 @@ button.car-info {
     margin-right: .5em;
 }
 
-button.add-to-favs {
+button.add-to-favs,
+button.yes {
     background-color: #7cde7c;
     padding: .8em;
 }
 
+button.no {
+    padding: .8em;
+    background-color: red;
+}
+
+button.yes,
+button.no {
+    color: #fff;
+    text-transform: uppercase;
+    min-width: 100px;
+    font-weight: bold;
+}
+
 button.car-info,
-button.add-to-favs {
+button.add-to-favs,
+button.yes,
+button.no {
     cursor: pointer;
 }
 
 button.car-info:hover,
-button.add-to-favs:hover {
+button.add-to-favs:hover,
+button.yes:hover,
+button.no:hover {
     opacity: .7;
 }
 
@@ -168,6 +206,62 @@ footer {
     text-align: center;
 }
 
+form#addVehicle {
+    width: 100%;
+    background-color: #8be8bd;
+    padding: 1.5em;
+}
+
+form#addVehicle input[type="text"] {
+    width: 75%;
+    display: inline;
+    border: none;
+    margin-right: 10px;
+}
+
+form#addVehicle input[type="submit"] {
+    padding: .5em;
+    background-color: red;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    min-width: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.button-row {
+    width: 60%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
 
 /* ========== Mobile Responsive Rules ==================== */
 
@@ -175,6 +269,12 @@ footer {
     h2 {
         margin-top: 1em;
         margin-bottom: 15px;
+    }
+    form#addVehicle {
+        margin-right: auto;
+        margin-left: auto;
+        width: 90%;
+        max-width: 500px;
     }
 }
 
@@ -203,5 +303,11 @@ footer {
     h2 {
         margin-top: 1em;
         margin-bottom: 15px;
+    }
+    form#addVehicle {
+        max-width: 840px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
