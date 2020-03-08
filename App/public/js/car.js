@@ -1,8 +1,8 @@
 const axios = require("axios");
-require('dotenv').config();
+require('dotenv').config()
 
 
-const vin = "1VXBR12EXCP901214";
+const vin = "WBAGN63474DS45472";
 const queryUrl = `http://api.carmd.com/v3.0/decode?vin=` + vin;
 const queryUrl2 = 'http://api.carmd.com/v3.0/image?vin=' + vin;
 
