@@ -130,3 +130,78 @@ module.exports = (app) => {
         }
     });
 }
+// get cuisine id from zamato api with search text
+function getCuisineId(data, searchItem) {
+    var cuisines = data.cuisines,
+      id;
+  
+    cuisines.forEach(function(cuisine) {
+      var foodType = cuisine.cuisine.cuisine_name.toLowerCase(),
+        idNum = cuisine.cuisine.cuisine_id;
+      if (foodType == searchItem.toLowerCase()) {
+        id = idNum;
+      }
+    });
+    if (typeof id !== "undefined") {
+      return id;
+    } else {
+      var message = "Oh No! Nothing found! Check your spelling to be sure.",
+        className = "warn";
+      showAlert(message, className);
+    }
+  }
+//Main event.
+$("#search-btn").on("click", function () {
+    var searchItem = $("#search-query").val().trim();
+  
+    setInLocalStorage(searchItem);
+    geo.getCurrentPosition(function (position) {
+      lat = position.coords.latitude;
+      lng = position.coords.longitude;
+  
+    $.ajax({
+      url:
+        "https://developers.zomato.com/api/v2.1/cuisines?lat=" 
+        + lat +
+        "&lon=" + lng +
+        "&apikey=" + zamatoKey +"",
+      method: "GET"
+    }).then(function (cuisines) {
+      
+      var cuisineId = getCuisineId(cuisines, searchItem).toString();
+  
+      $.ajax({
+        url: "https://developers.zomato.com/api/v2.1/search?lat=" 
+        + lat +
+        "&lon=" + lng +
+        "&cuisines=" + cuisineId +
+        "&apikey=" + zamatoKey +"",
+        method: "GET"
+      }).then(function (food) {
+        var allRest = food.restaurants;
+        
+        getMarkers(allRest);
+        paintResults(allRest);
+      });
+    });});
+  // get cuisine id from zamato api with search text
+function getCuisineId(data, searchItem) {
+    var cuisines = data.cuisines,
+      id;
+  
+    cuisines.forEach(function(cuisine) {
+      var foodType = cuisine.cuisine.cuisine_name.toLowerCase(),
+        idNum = cuisine.cuisine.cuisine_id;
+      if (foodType == searchItem.toLowerCase()) {
+        id = idNum;
+      }
+    });
+    if (typeof id !== "undefined") {
+      return id;
+    } else {
+      var message = "Oh No! Nothing found! Check your spelling to be sure.",
+        className = "warn";
+      showAlert(message, className);
+    }
+  }
+})
