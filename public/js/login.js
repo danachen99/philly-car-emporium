@@ -29,11 +29,14 @@ $(document).ready(function() {
                 password: password
             })
             .then(function() {
-                window.location.replace("/members");
+                window.location.replace("/inventory");
                 // If there's an error, log the error
             })
-            .catch(function(err) {
-                console.log(err);
-            });
+            .catch(handleLoginErr);
+    }
+
+    function handleLoginErr(err) {
+        $("#alert .msg").text(err.responseJSON);
+        $("#alert").fadeIn(500);
     }
 });
