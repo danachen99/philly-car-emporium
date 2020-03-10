@@ -8,14 +8,18 @@
     <title>Foundation Starter Template</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="./stylesheets/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation-float.min.css" integrity="sha256-TPcVVrzfTETpAWQ8HhBHIMT7+DbszMr5n3eFi+UwIl8= sha384-+aXh7XSzITwlvjelsNWuL1A9rT8pWGaiqMMeUjtKcsWIfzT1oV8Mp3oYxmjPK8Gv sha512-cArttU/Yh+PzfQ/dhCdfBiU9+su+fuCwFxLrlLbvuJE/ynUbstaKweVPs7Hdbok9jlv9cwt+xdk20wRz7oYErQ=="
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation-float.min.css"
+        integrity="sha256-TPcVVrzfTETpAWQ8HhBHIMT7+DbszMr5n3eFi+UwIl8= sha384-+aXh7XSzITwlvjelsNWuL1A9rT8pWGaiqMMeUjtKcsWIfzT1oV8Mp3oYxmjPK8Gv sha512-cArttU/Yh+PzfQ/dhCdfBiU9+su+fuCwFxLrlLbvuJE/ynUbstaKweVPs7Hdbok9jlv9cwt+xdk20wRz7oYErQ=="
         crossorigin="anonymous">
     <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation-prototype.min.css" integrity="sha256-JyhZsgvsqjrdl9GPOILi/zyc+z4dcwXiyP1Q7cwWlM0= sha384-GtUT6gOaCY/S1ggTUOnqe5CQAEAZ6oVTmMq3X4vfZrvp+tLgjBEmwVxJnukor+o0 sha512-x3+KBxBjFh8PGncrfDOsJhntYDBFdJxmpb211THYkQOaGWvk7ckZG6prGUpZqz85AXgiispjow06+bDnIxnWDQ=="
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation-prototype.min.css"
+        integrity="sha256-JyhZsgvsqjrdl9GPOILi/zyc+z4dcwXiyP1Q7cwWlM0= sha384-GtUT6gOaCY/S1ggTUOnqe5CQAEAZ6oVTmMq3X4vfZrvp+tLgjBEmwVxJnukor+o0 sha512-x3+KBxBjFh8PGncrfDOsJhntYDBFdJxmpb211THYkQOaGWvk7ckZG6prGUpZqz85AXgiispjow06+bDnIxnWDQ=="
         crossorigin="anonymous">
     <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
+        integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
         crossorigin="anonymous"></script>
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500i,700&display=swap" rel="stylesheet">
@@ -26,9 +30,9 @@
     <div class="topnav" id="myTopnav">
         <a href="/" class="logo">Philly Auto Imporium</a>
         <a href="/">Home</a>
-        <a href="carlist.html">Shop</a>
-        <a href="login.html">Dealer Login</a>
-        <a href="#home" class="active">My Favs</a>
+        <a href="/carlist">Shop</a>
+        <a href="/login">Dealer Login</a>
+        <a class="active" data-open="exampleModal1">Watchlist</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
@@ -45,6 +49,19 @@
         }
     </script>
     <!-- End of Navigation Menu -->
+
+    <!--Modal for Watchlist-->
+    <div class="row">
+        <div class="columns">      
+          <div class="reveal" id="exampleModal1" data-reveal>
+            <h1>Your Car Watchlist</h1>
+            <ol class= "list"></ol>
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
     <!-- Homepage Header Banner Section -->
     <div class="row-full">
@@ -68,7 +85,7 @@
                     <h3 class="car-title0">Car Title</h3>
                     <p id="info0">Basic Info</p>
                     <!-- <button class="car-info">More Info</button> -->
-                    <button class="add-to-favs">Add to Watchlist</button>
+                    <button class="add-to-favs" id="addfavs1">Add to Watchlist</button>
                 </div>
             </div>
             <!-- Car Card -->
@@ -78,7 +95,7 @@
                     <h3 class="car-title1">Car Title</h3>
                     <p id="info1">Basic Info</p>
                     <!-- <button class="car-info">More Info</button> -->
-                    <button class="add-to-favs">Add to Watchlist</button>
+                    <button class="add-to-favs" id="addfavs2">Add to Watchlist</button>
                 </div>
             </div>
             <!-- Car Card -->
@@ -88,7 +105,7 @@
                     <h3 class="car-title2">Car Title</h3>
                     <p id="info2">Basic Info</p>
                     <!-- <button class="car-info">More Info</button> -->
-                    <button class="add-to-favs">Add to Watchlist</button>
+                    <button class="add-to-favs" id="addfavs3">Add to Watchlist</button>
                 </div>
             </div>
 
@@ -104,7 +121,10 @@
 
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/home.js"></script>
+    <script type="text/javascript" src="js/watchlist.js"></script>
+
 </body>
 
 </html>

@@ -16,7 +16,6 @@ module.exports = function(app) {
     });
 
     app.get("/login", function(req, res) {
-        // If the user already has an account send them to the members page
         if (req.user) {
             res.redirect("/inventory");
         }
@@ -24,7 +23,6 @@ module.exports = function(app) {
     });
 
     app.get("/inventory", function(req, res) {
-        // If the user already has an account send them to the members page
         res.sendFile(path.join(__dirname, "../public/inventory.html"));
     });
 
