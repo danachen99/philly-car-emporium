@@ -24,11 +24,24 @@
 <body>
     <!-- Navigation Menu -->
     <div class="topnav" id="myTopnav">
-        <a href="/" class="logo">Philly Auto Imporium</a>
-        <a href="/">Home</a>
+        <a href="index.html" class="logo">Philly Auto Imporium</a>
+        <a href="index.html">Home</a>
         <a href="carlist.html">Shop</a>
         <a href="login.html">Dealer Login</a>
-        <a class="active" data-open="exampleModal1">Watchlist</a>
+        <!-- Trigger/Open The Modal -->
+        
+        <button id="myModal" class="active" data-open="exampleModal1">Watchlist</button>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Heres Your Watchlist</p>
+  </div>
+
+</div>
+
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
