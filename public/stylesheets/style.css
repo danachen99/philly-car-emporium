@@ -1,6 +1,26 @@
 form.signup,
 form.login {
-    margin-top: 50px;
+    margin-top: 130px;
+    padding: 1.5em;
+    color: #fff;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+form.login label,
+form.signup label {
+    color: #fff;
+}
+
+form.login .btn,
+form.signup .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 16px;
+    font-size: 17px;
 }
 
 .column {
@@ -33,6 +53,20 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+body.login-page {
+    background-image: url('../img/banner.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body.signup-page {
+    background-image: url('../img/banner.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 
 /* ========== Navigation Menu ==================== */
 
@@ -60,7 +94,7 @@ body {
 }
 
 .topnav a.active {
-    background-color: #4CAF50;
+    background-color: #4CAF50!important;
     color: white;
 }
 
@@ -156,6 +190,9 @@ a.logo {
     background-color: #eeeeee;
     padding: 1em;
     margin-bottom: 1em;
+    -webkit-box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.75);
 }
 
 button.car-info {
@@ -238,8 +275,8 @@ form#addVehicle input[type="submit"] {
 }
 
 .accordion {
-    background-color: #eee;
-    color: #444;
+    background-color: #2a2b2b!important;
+    color: #fff;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -248,11 +285,13 @@ form#addVehicle input[type="submit"] {
     outline: none;
     font-size: 15px;
     transition: 0.4s;
+    border-bottom: 1px solid white;
 }
 
 .active,
 .accordion:hover {
-    background-color: #ccc;
+    background-color: #ccc!important;
+    color: #333;
 }
 
 .panel {
@@ -275,6 +314,10 @@ form#addVehicle input[type="submit"] {
         margin-left: auto;
         width: 90%;
         max-width: 500px;
+    }
+    form.login,
+    form.signup {
+        width: 90%;
     }
 }
 
@@ -309,5 +352,9 @@ form#addVehicle input[type="submit"] {
         display: block;
         margin-right: auto;
         margin-left: auto;
+    }
+    form.login,
+    form.signup {
+        width: 60%;
     }
 }
