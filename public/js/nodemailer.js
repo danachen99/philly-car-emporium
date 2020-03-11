@@ -22,8 +22,8 @@ function main() {
   transporter.sendMail({
     from: "nodemailerproj1@gmail.com", // sender address
     to: "nodemailerproj1@gmail.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
+    subject: "Hello User ✔", // Subject line
+    text: "Thank you for your business! Here is your watchlist!", // plain text body
   }, function (err) {
       
       if (err) {
