@@ -35,7 +35,7 @@ module.exports = (app) => {
         // });
 
         carInfo(vin).then(data => {
-            console.log(data)
+            // console.log(data)
             db.Car.create(data).then(dbCar => res.json(dbCar));
             //res.status(204).end()
         });
