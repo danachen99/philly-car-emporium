@@ -90,3 +90,4 @@ $(document).ready(() => {
         }
     }
 })
+module.exports = renderSavedCar

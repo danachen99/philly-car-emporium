@@ -1,6 +1,8 @@
 // Requiring necessary npm packages
 var express = require("express");
 var session = require("express-session");
+require("./public/js/nodemailer");
+
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 require('dotenv').config();
