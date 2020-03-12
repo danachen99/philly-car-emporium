@@ -2,8 +2,6 @@ $(document).ready(() => {
         //js from foundation that makes modal work
         $(document).foundation();
 
-
-
         //get all cars from the database 
         $.get("/api/cars/all", data => {
 
@@ -16,6 +14,7 @@ $(document).ready(() => {
                 let newCard = $("<div>");
                 newCard.addClass("car-card");
                 newCard.html(`<h3 class="car-title">${data[i].make} ${data[i].model}</h3>
+                <img src="" alt="Car Img">
                 <p>Year: ${data[i].year}</p>
                 <p>Make: ${data[i].make}</p>
                 <p>Model: ${data[i].model}</p>
