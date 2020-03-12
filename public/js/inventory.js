@@ -43,12 +43,13 @@ $(document).ready(() => {
         // If we have a vin, run the submitCar function
         submitCar(carData.vin);
         vinInput.val("Enter a Vin Number");
-        location.reload();
+        
     });
 
     function submitCar(vin) {
         $.post("/api/cars", { vin })
             .then(function(data) {
+                location.reload();
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
             .catch();

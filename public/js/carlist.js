@@ -20,8 +20,8 @@ $(document).ready(() => {
                 <p>Trim: ${data[i].trim}</p>
                 <p>Engine: ${data[i].engine}</p>
                 <p>Transmission: ${data[i].transmission}</p>
-                <button class="add-to-favs">Add to Watchlist</button>`);
-
+                <button class="add-to-favs" index="${i}">Add to Watchlist</button>`);
+                                
                 newDiv.append(newCard);
                 carSection.prepend(newDiv);
             }
