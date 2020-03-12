@@ -2,6 +2,9 @@ $(document).ready(() => {
         //js from foundation that makes modal work
         $(document).foundation();
 
+         //calls function to grab watchlist storage on refresh
+         renderSavedCar();
+         
         //get all cars from the database 
         $.get("/api/cars/all", data => {
 
@@ -21,48 +24,42 @@ $(document).ready(() => {
                 <p>Trim: ${data[i].trim}</p>
                 <p>Engine: ${data[i].engine}</p>
                 <p>Transmission: ${data[i].transmission}</p>
-                <button class="add-to-favs">Add to Watchlist</button>`);
-
+                <button class="add-to-favs" index="${i}">Add to Watchlist</button>`);
                 newDiv.append(newCard);
                 carSection.prepend(newDiv);
             }
 
-            //calls function to grab watchlist storage on refresh
-            renderSavedCar();
+           
             //watchlist code that exexutes on clicking the 'Add to Watchlist' button on the homepage
             const addWatchBtn = document.querySelector("#car-section");
             let newArr = [];
             addWatchBtn.addEventListener("click", function(event) {
                 event.preventDefault();
-                if (event.target.matches("#addfavs1")) {
-                    let info = [carArr[0].year, carArr[0].make, carArr[0].model];
-                    newArr.push(info);
-                    localStorage.setItem("savedCar", JSON.stringify(newArr));
-                    renderSavedCar();
-                } else if (event.target.matches("#addfavs2")) {
-                    let info = [carArr[1].year, carArr[1].make, carArr[1].model];
-                    newArr.push(info);
-                    localStorage.setItem("savedCar", JSON.stringify(newArr));
-                    renderSavedCar();
-                } else if (event.target.matches("#addfavs3")) {
-                    let info = [carArr[2].year, carArr[2].make, carArr[2].model];
+                if (event.target.matches(".add-to-favs")) {
+                    let e = event.target;
+                    let index = e.getAttribute("index");
+                    console.log(data);
+                    let info = [data[index].year, data[index].make, data[index].model];
                     newArr.push(info);
                     localStorage.setItem("savedCar", JSON.stringify(newArr));
                     renderSavedCar();
                 }
-            });
-        });
-
+            });  
+        }) 
         //Function that saves a car to the Favorites modal in an item element, pulling from local storage
         function renderSavedCar() {
             const list = document.querySelector(".list");
             list.innerHTML = "";
             var savedCar = JSON.parse(localStorage.getItem("savedCar"));
+            if (savedCar != null){
             for (var i = 0; i < savedCar.length; i++) {
                 var li = document.createElement("li");
                 li.innerHTML = savedCar[i];
                 list.append(li);
             }
+        } else {
+            const list = document.querySelector(".list");
+            list.innerHTML = ""; 
+        }
         }
     })
-    // module.exports = renderSavedCar
