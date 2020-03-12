@@ -17,7 +17,7 @@ $(document).ready(() => {
                 <p>Trim: ${data[i].trim}</p>
                 <p>Engine: ${data[i].engine}</p>
                 <p>Transmission: ${data[i].transmission}</p>
-                <button class="add-to-favs">Add to Watchlist</button>`);
+                <button class="delete">Delete From Inventory</button>`);
 
             newDiv.append(newCard);
             carSection.prepend(newDiv);

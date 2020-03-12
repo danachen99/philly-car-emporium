@@ -193,9 +193,10 @@ a.logo {
     -webkit-box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.75);
-    display: table; /* Make the container element behave like a table */
-    width: 100%; /* Set full-width to expand the whole page */
-
+    display: table;
+    /* Make the container element behave like a table */
+    width: 100%;
+    /* Set full-width to expand the whole page */
 }
 
 button.car-info {
@@ -209,6 +210,11 @@ button.add-to-favs,
 button.yes {
     background-color: #7cde7c;
     padding: .8em;
+}
+
+button.delete {
+    padding: .8em;
+    background-color: orangered;
 }
 
 button.no {
@@ -361,15 +367,21 @@ form#addVehicle input[type="submit"] {
         width: 60%;
     }
 }
+
+
 /* section {
   width: 99%;
   height: 35%;
 } */
+
 .col-container {
-    display: table; /* Make the container element behave like a table */
-    width: 100%; /* Set full-width to expand the whole page */
+    display: table;
+    /* Make the container element behave like a table */
+    width: 100%;
+    /* Set full-width to expand the whole page */
 }
 
 .col {
-    display: table-cell; /* Make elements inside the container behave like table cells */
+    display: table-cell;
+    /* Make elements inside the container behave like table cells */
 }

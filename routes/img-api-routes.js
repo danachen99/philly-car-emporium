@@ -4,7 +4,8 @@ let carImage = require("../public/js/img.js");
 module.exports = function(app) {
     // CREATE/POST route for saving a new image
     app.post("/api/images", function(req, res) {
-        carImage(req.body.vin).then(data => {
+        carImage(vin).then(data => {
+            console.log(data);
             db.Image.create(data).then(dbImage => res.json(dbImage));
             //res.status(204).end()
         });
