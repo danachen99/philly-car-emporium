@@ -31,13 +31,10 @@ module.exports = (app) => {
 
     // ================================== 
     //READ 
-    // cars/:make ... :model .... :
-    //Can we use promise all here to remove repetitiveness? 
     app.get("/api/cars/all", (req, res) => {
         db.Car.findAll({}).then(results => {
             res.json(results)
             results.forEach(car => {
-                console.log(car)
                 return car;
             });
         });
