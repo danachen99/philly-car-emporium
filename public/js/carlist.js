@@ -8,7 +8,6 @@ $(document).ready(() => {
             let carSection = $("#append-here");
 
             for (let i = 0; i < data.length; i++) {
-                // console.log(data[i]);
                 let newDiv = $("<div>");
                 newDiv.addClass("columns small-12 medium-4 large-4");
 
