@@ -8,15 +8,15 @@ module.exports = (sequelize, DataTypes) => {
         trim: DataTypes.STRING,
         transmission: DataTypes.STRING
     });
-    Car.associate = function(models) {
-        //Associating Car with Image
-        //When Car is deleted, also delete any associating Image
-        Car.hasOne(models.Image, {
-            onDelete: "cascade",
-            foreignKey: {
-                allowNull: true
-            }
-        })
-    }
+    // Car.associate = function(models) {
+    //     //Associating Car with Image
+    //     //When Car is deleted, also delete any associating Image
+    //     Car.hasOne(models.Image, {
+    //         onDelete: "cascade",
+    //         foreignKey: {
+    //             allowNull: true
+    //         }
+    //     })
+    // }
     return Car;
 }
