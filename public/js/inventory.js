@@ -16,22 +16,28 @@ $(document).ready(() => {
                 <p>Model: ${data[i].model}</p>
                 <p>Trim: ${data[i].trim}</p>
                 <p>Engine: ${data[i].engine}</p>
-                <p>Transmission: ${data[i].transmission}</p>
-                <button class="delete">Delete From Inventory</button>`);
+                <p>Transmission: ${data[i].transmission}</p>`);
+
+            let newBtn = $("<button>");
+            newBtn.addClass("delete");
+            newBtn.text("Delete From Inventory");
+            newBtn.attr("delete-btn");
+            newCard.append(newBtn);
 
             newDiv.append(newCard);
             carSection.prepend(newDiv);
         }
     });
 
-    var vinInput = $("#fname");
-    var addBtn = $(".addVehicleSubmit");
+    let vinInput = $("#fname");
+    let addBtn = $(".addVehicleSubmit");
     const queryUrl = `http://api.carmd.com/v3.0/decode?vin=`;
+    var deleteBtn = $(".delete");
 
     addBtn.on("click", function(event) {
         event.preventDefault();
 
-        var carData = {
+        let carData = {
             vin: vinInput.val().trim(),
         };
         // If we have a vin, run the submitCar function
@@ -48,7 +54,19 @@ $(document).ready(() => {
             .catch();
     }
 
+    deleteBtn.on('click', function() { alert("test") });
+    // deleteBtn.on("click", function(event) {
+    //     event.preventDefault();
+    //     console.log("HERE");
+    //     let currentCar = $(this).parent().parent().data("car");
+    //     deleteCar(currentCar.id);
+    //     location.reload();
+    // });
 
+    function deleteCar(id) {
+        console.log(id);
+        $.delete("/api/cars/:id", id);
+    }
 
     module.exports = function carInfo(vin) {
         return axios({
