@@ -3,39 +3,12 @@ let db = require("../models");
 let carInfo = require("../public/js/car.js");
 let carImage = require("../public/js/img.js")
 let passport = require("../config/passport");
-const vin = "5XXGN4A70CG022862";
+
 
 module.exports = (app) => {
     // CREATE 
     app.post("/api/cars", (req, res) => {
-        // Add sequelize code for creating a post using req.body,
-        // then return the result using res.json
-        // carInfo().then(data => {
-        //     carImage().then(result => {
-        //         db.Car.create(data, {
-        //             image: result.image
-        //         }).then(dbCar => res.json(dbCar));
-        //     });
-        // });
-
-
-        // carInfo().then(data => {
-        //     carImage().then(result => {
-        //         db.Car.create({
-        //             year: data.year,
-        //             make: data.make,
-        //             model: data.model,
-        //             manufacturer: data.manufacturer,
-        //             engine: data.engine,
-        //             trim: data.trim,
-        //             transmission: data.transmission,
-        //             // image: result.image
-        //         }).then(dbCar => res.json(dbCar));
-        //     });
-        // });
-
-        carInfo(vin).then(data => {
-            // console.log(data)
+        carInfo(req.body.vin).then(data => {
             db.Car.create(data).then(dbCar => res.json(dbCar));
             //res.status(204).end()
         });
