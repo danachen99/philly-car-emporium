@@ -71,18 +71,19 @@
         <div class="row mar20">
             <!-- search form -->
             <form id="addVehicle">
-                <label>Enter VIN No. to Get Vehicle Information</label><br>
+                <label>Enter VIN No. to Add a Vehicle to the Database</label><br>
                 <input type="text" id="fname" name="fname" placeholder="Enter VIN Number">
-                <input type="submit" class="addVehicleSubmit" value="Get Info">
+                <input type="submit" class="addVehicleSubmit" value="Add a Vehicle">
             </form>
         </div>
         <!-- End search form -->
+        <div class="row" id="append-here"></div>
 
         <!-- Search results displayed here when form button is pressed -->
-        <div class="row mar50">
+        <!-- <div class="row mar50">
             <div class="columns medium-6 display-info">
                 <h3 class="center">Vehicle Information</h3>
-                <p>Car info autotamtically populated here when API call is made.</p>
+                <p id="carDisplay">Car info autotamtically populated here when API call is made.</p>
             </div>
             <div class="columns medium-6 add-newcar">
                 <h3 class="center">Add Vehicle to Inventory?</h3>
@@ -92,7 +93,7 @@
                 </div>
             </div>
         </div>
-        <!-- end of results section -->
+        end of results section
 
         <div class="row mar30">
             <div class="columns medium-12">
@@ -126,7 +127,7 @@
                                 panel.style.display = "block";
                             }
                         });
-                    }
+                    } 
                 </script>
 
             </div>
@@ -141,8 +142,10 @@
     </footer>
     <!-- End of Content Section -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/home.js"></script>
-    <script type="text/javascript" src="js/watchlist.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/carlist.js"></script>
+    <script type="text/javascript" src="js/inventory.js"></script>
 
 </body>
 

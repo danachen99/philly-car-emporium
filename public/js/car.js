@@ -1,15 +1,13 @@
 const axios = require("axios");
 require('dotenv').config()
 
-
-const vin = "WBAGN63474DS45472";
-const queryUrl = `http://api.carmd.com/v3.0/decode?vin=` + vin;
-const queryUrl2 = 'http://api.carmd.com/v3.0/image?vin=' + vin;
+const queryUrl = `http://api.carmd.com/v3.0/decode?vin=`;
+const queryUrl2 = 'http://api.carmd.com/v3.0/image?vin=';
 
 module.exports = function carInfo(vin) {
     return axios({
         method: 'get',
-        url: queryUrl,
+        url: queryUrl + vin,
         responseType: 'json',
         headers: {
             "content-type": "application/json",
