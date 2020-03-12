@@ -16,7 +16,8 @@ form.signup label {
 }
 
 form.login .btn,
-form.signup .btn {
+form.signup .btn,
+form.contact-dealer .btn {
     background-color: #4CAF50;
     color: white;
     padding: 14px 16px;
@@ -163,6 +164,11 @@ a.logo {
 
 .center {
     text-align: center;
+}
+
+h3.car-title,
+.car-card h3 {
+    font-size: 1.4em!important;
 }
 
 .head-banner {
