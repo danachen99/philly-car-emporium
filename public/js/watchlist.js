@@ -34,18 +34,26 @@ $(document).ready(() => {
         const addWatchBtn = document.querySelector("#append-here");
         let newArr = [];
         addWatchBtn.addEventListener("click", function(event) {
+            const savedCar = localStorage.getItem("savedCar");
             event.preventDefault();
             if (event.target.matches(".add-to-favs")) {
                 let e = event.target;
                 let index = e.getAttribute("index");
                 console.log(data);
                 let info = [data[index].year, data[index].make, data[index].model];
-                newArr.push(info);
-                localStorage.setItem("savedCar", JSON.stringify(newArr));
+                if(savedCar){
+                    const arr = JSON.parse(savedCar);
+                    arr.push(info);
+                    localStorage.setItem("savedCar", JSON.stringify(arr));
+                } else {
+                    newArr.push(info);
+                    localStorage.setItem("savedCar", JSON.stringify(newArr));
+                }
+                
                 renderSavedCar();
             }
-        });  
-    }) 
+        });
+    })
     //Function that saves a car to the Favorites modal in an item element, pulling from local storage
     function renderSavedCar() {
         const list = document.querySelector(".list");
