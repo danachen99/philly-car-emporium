@@ -48,33 +48,35 @@ $(document).ready(() => {
                     location.reload();
                 });
         }
+
+        let vinInput = $("#fname");
+        let addBtn = $(".addVehicleSubmit");
+        const queryUrl = `http://api.carmd.com/v3.0/decode?vin=`;
+        // var deleteBtn = $(".delete");
+
+        addBtn.on("click", function(event) {
+            event.preventDefault();
+
+            let carData = {
+                vin: vinInput.val().trim(),
+            };
+            // If we have a vin, run the submitCar function
+            submitCar(carData.vin);
+            vinInput.val("Enter a Vin Number");
+
+        });
+
+        function submitCar(vin) {
+            $.post("/api/cars", { vin })
+                .then(function(data) {
+                    location.reload();
+                    // If there's an error, handle it by throwing up a bootstrap alert
+                })
+                .catch();
+        }
     });
 
-    let vinInput = $("#fname");
-    let addBtn = $(".addVehicleSubmit");
-    const queryUrl = `http://api.carmd.com/v3.0/decode?vin=`;
-    // var deleteBtn = $(".delete");
 
-    addBtn.on("click", function(event) {
-        event.preventDefault();
-
-        let carData = {
-            vin: vinInput.val().trim(),
-        };
-        // If we have a vin, run the submitCar function
-        submitCar(carData.vin);
-        vinInput.val("Enter a Vin Number");
-
-    });
-
-    function submitCar(vin) {
-        $.post("/api/cars", { vin })
-            .then(function(data) {
-                location.reload();
-                // If there's an error, handle it by throwing up a bootstrap alert
-            })
-            .catch();
-    }
 
 
     module.exports = function carInfo(vin) {
