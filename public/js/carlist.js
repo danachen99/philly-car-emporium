@@ -9,7 +9,7 @@ $(document).ready(() => {
 
             for (let i = 0; i < data.length; i++) {
                 let newDiv = $("<div>");
-                newDiv.addClass("columns small-12 medium-4 large-4");
+                newDiv.addClass("columns small-12 medium-6 large-4");
 
                 let newCard = $("<div>");
                 newCard.addClass("car-card");
@@ -21,7 +21,7 @@ $(document).ready(() => {
                 <p>Engine: ${data[i].engine}</p>
                 <p>Transmission: ${data[i].transmission}</p>
                 <button class="add-to-favs" index="${i}">Add to Watchlist</button>`);
-                                
+
                 newDiv.append(newCard);
                 carSection.prepend(newDiv);
             }

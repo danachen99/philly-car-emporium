@@ -6,7 +6,7 @@ $(document).ready(() => {
         for (let i = 0; i < data.length; i++) {
 
             let newDiv = $("<div>");
-            newDiv.addClass("columns small-12 medium-4 large-4");
+            newDiv.addClass("columns small-12 medium-6 large-4");
 
             let newCard = $("<div>");
             newCard.addClass("car-card");
