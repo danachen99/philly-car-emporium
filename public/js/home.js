@@ -34,14 +34,22 @@ $(document).ready(() => {
             const addWatchBtn = document.querySelector("#car-section");
             let newArr = [];
             addWatchBtn.addEventListener("click", function(event) {
+                const savedCar = localStorage.getItem("savedCar");
                 event.preventDefault();
                 if (event.target.matches(".add-to-favs")) {
                     let e = event.target;
                     let index = e.getAttribute("index");
                     console.log(data);
                     let info = [data[index].year, data[index].make, data[index].model];
-                    newArr.push(info);
-                    localStorage.setItem("savedCar", JSON.stringify(newArr));
+                    if(savedCar){
+                        const arr = JSON.parse(savedCar);
+                        arr.push(info);
+                        localStorage.setItem("savedCar", JSON.stringify(arr));
+                    } else {
+                        newArr.push(info);
+                        localStorage.setItem("savedCar", JSON.stringify(newArr));
+                    }
+                    
                     renderSavedCar();
                 }
             });  
