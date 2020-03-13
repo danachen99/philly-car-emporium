@@ -62,7 +62,8 @@ $(document).ready(() => {
         if (savedCar != null){
         for (var i = 0; i < savedCar.length; i++) {
             var li = document.createElement("li");
-            li.innerHTML = savedCar[i];
+            li.classList.add("listItem");
+            li.innerHTML = `${savedCar[i][0]} - ${savedCar[i][1]} ${savedCar[i][2]}`;
             list.append(li);
         }
     } else {
