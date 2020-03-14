@@ -202,6 +202,7 @@ h3.car-title,
     display: table;
     /* Make the container element behave like a table */
     width: 100%;
+    height: fit-content;
     /* Set full-width to expand the whole page */
 }
 
@@ -220,7 +221,8 @@ button.yes {
 
 button.delete {
     padding: .8em;
-    background-color: orangered;
+    background-color: gray;
+    color: white;
 }
 
 button.no {
