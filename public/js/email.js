@@ -5,7 +5,7 @@ const clearBtn = $("#clearBtn");
 
 $(clearBtn).on("click", (event) => {
     localStorage.clear("savedCar");
-    location.reload(); 
+    location.reload();
 })
 
 
@@ -16,7 +16,7 @@ $(emailBtn).on("click", (event) => {
     // console.log(what);
     let watchlist = document.createElement("ol");
 
-    $(".listItem").each(function () {
+    $(".listItem").each(function() {
         var item = document.createElement("li");
         item.innerHTML = $(this).text();
         console.log(item);
@@ -37,7 +37,7 @@ $(emailBtn).on("click", (event) => {
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation Starter Template</title>
+    <title>Philly Auto Emporium</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="./stylesheets/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation-float.min.css" integrity="sha256-TPcVVrzfTETpAWQ8HhBHIMT7+DbszMr5n3eFi+UwIl8= sha384-+aXh7XSzITwlvjelsNWuL1A9rT8pWGaiqMMeUjtKcsWIfzT1oV8Mp3oYxmjPK8Gv sha512-cArttU/Yh+PzfQ/dhCdfBiU9+su+fuCwFxLrlLbvuJE/ynUbstaKweVPs7Hdbok9jlv9cwt+xdk20wRz7oYErQ=="
@@ -71,12 +71,10 @@ $(emailBtn).on("click", (event) => {
 
     };
     localStorage.clear("savedCar");
-    location.reload(); 
+    location.reload();
     $.post('/send', mailOptions)
         .done(data => console.log("email sent successfully", data))
         .fail(error => console.warn("email send failed", error));
 
-      
+
 });
-
-
