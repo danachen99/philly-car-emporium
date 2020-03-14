@@ -39,7 +39,7 @@ This Used Car Dealership application is meant to help small dealerships keep tra
 - MySQL
 - Sequelize
 - JawsDB
-- [https://randomvin.com/](https://randomvin.com/ "Website to Generate Random Vin Nos.")]
+- [https://randomvin.com/](https://randomvin.com/ "Website to Generate Random Vin Nos.")
 - NPM packages
   - express
   - mysql2
@@ -55,7 +55,7 @@ This Used Car Dealership application is meant to help small dealerships keep tra
 
 ## Contributors
 
-- **Jordan Smith** - _Full-Stack Development_ - [Jordan Smith](https://github.com/jsmithxyz "Sean Cummings")
+- **Jordan Smith** - _Full-Stack Development_ - [Jordan Smith](https://github.com/jsmithxyz "Jordan Smith")
 - **Dana Chen** - _Full-Stack Development_ - [Dana Chen](https://github.com/danachen99 "Dana Chen")
-- **David Pollan** - _Full-Stack Development_ - [Dave Pollan](https://github.com/dp95000) "David Pollan")
-- **Donovan Brown** - _Full-Stack Development_ - [Donovan Brown](https://github.com/dkb715 "Donovan Brown")
+- **David Pollan** - _Full-Stack Development_ - [Dave Pollan](https://github.com/dp95000 "David Pollan")
+- **Donavan Brown** - _Full-Stack Development_ - [Donavan Brown](https://github.com/dkb715 "Donavan Brown")

@@ -2,7 +2,7 @@ $(document).ready(() => {
     $(document).foundation();
     $.get("/api/cars/all", data => {
         let carSection = $("#append-here");
-
+        //for each car in the database, add new card to the page
         for (let i = 0; i < data.length; i++) {
 
             let newDiv = $("<div>");
@@ -11,35 +11,29 @@ $(document).ready(() => {
             let newCard = $("<div>");
             newCard.addClass("car-card");
             newCard.html(`<h3 class="car-title">${data[i].make} ${data[i].model}</h3>
-                <p>Year: ${data[i].year}</p>
-                <p>Make: ${data[i].make}</p>
-                <p>Model: ${data[i].model}</p>
-                <p>Trim: ${data[i].trim}</p>
-                <p>Engine: ${data[i].engine}</p>
-                <p>Transmission: ${data[i].transmission}</p>
+                <p><b>Year:</b> ${data[i].year}</p>
+                <p><b>Make:</b> ${data[i].make}</p>
+                <p><b>Model:</b> ${data[i].model}</p>
+                <p><b>Trim:</b> ${data[i].trim}</p>
+                <p><b>Engine:</b> ${data[i].engine}</p>
+                <p><b>Transmission:</b> ${data[i].transmission}</p>
                 <button class="delete" index="${i}">Delete From Inventory</button>`);
-
-            // let newBtn = $("<button>");
-            // newBtn.addClass("delete");
-            // newBtn.text("Delete From Inventory");
-            // newBtn.attr("delete-btn");
-            // newCard.append(newBtn);
 
             newDiv.append(newCard);
             carSection.prepend(newDiv);
         }
 
+        //delete button will grab the id of the selected car and send to deleteCar
         let deleteBtn = $(".delete");
-        // deleteBtn.on('click', function() { alert("test") });
-        deleteBtn.on("click", function(event) {
+        deleteBtn.on("click", event => {
             event.preventDefault();
             let e = event.target;
             let index = e.getAttribute("index");
-            // alert(data[index].id);
             deleteCar(data[index].id);
         });
 
-        function deleteCar(id) {
+        //will call DELETE and reload the page
+        const deleteCar = id => {
             $.ajax({
                     method: "DELETE",
                     url: "/api/cars/" + id
@@ -52,7 +46,6 @@ $(document).ready(() => {
         let vinInput = $("#fname");
         let addBtn = $(".addVehicleSubmit");
         const queryUrl = `http://api.carmd.com/v3.0/decode?vin=`;
-        // var deleteBtn = $(".delete");
 
         addBtn.on("click", function(event) {
             event.preventDefault();
@@ -76,9 +69,6 @@ $(document).ready(() => {
         }
     });
 
-
-
-
     module.exports = function carInfo(vin) {
         return axios({
             method: 'get',
@@ -93,6 +83,4 @@ $(document).ready(() => {
             return response.data.data;
         });
     };
-
-
-})
+});
